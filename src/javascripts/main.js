@@ -3,8 +3,7 @@ import '../styles/main.scss';
 
 const playSound = (e) => {
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  const key = document.querySelector(`.keyboard-key[data-key="${e.keyCode}"]`);
-  console.error(key);
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
   key.classList.add('pressed');
   if (!audio) return;
   audio.currentTime = 0;
@@ -12,16 +11,16 @@ const playSound = (e) => {
 };
 
 const keyListener = () => {
-  window.addEventListener('keydown', playSound);
+  document.addEventListener('keydown', playSound);
 };
 
-const removeTransition = () => {
-  console.error('I am working');
-  this.classList.remove('pressed');
+const removeTransition = (e) => {
+  console.error('I am working', 'removeTransition');
+  e.target.classList.remove('pressed');
 };
 
 const removeListener = () => {
-  const allKeys = document.querySelectorAll('.keyboard-key');
+  const allKeys = Array.from(document.querySelectorAll('.key'));
   allKeys.forEach((key) => {
     key.addEventListener('transitionend', removeTransition);
   });
