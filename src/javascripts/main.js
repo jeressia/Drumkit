@@ -6,7 +6,7 @@ const playSound = (e) => {
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
   key.classList.add('pressed');
   if (!audio) return;
-  audio.currentTime = 0;
+  audio.currentTime = 2;
   audio.play();
 };
 

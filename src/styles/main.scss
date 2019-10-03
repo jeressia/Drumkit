@@ -1,7 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Big+Shoulders+Display|Mansalva&display=swap');
 
 body {
-  background-color: white;
+  background-color: rgb(255, 210, 225);
+  background-image: url(../../assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100vw;
 
 
 }
@@ -15,18 +19,23 @@ body {
 
 .title-text{
   text-align: center;
+  color: #129595;
+  text-transform: uppercase;
+  font-family: 'Mansalva', cursive;
+  padding: 25px;
 }
 
 .all-keys{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 50px;
+  padding: 25px;
 }
 
 .key{
   display: block;
   background: white;
+  color: #a5319f;
   width: 65px;
   margin: 10px;
   padding: 15px;
@@ -37,15 +46,21 @@ body {
 }
 
 .sound{
+  color: #129595;
   font-weight: 100;
   font-size: .6rem;
   text-transform: uppercase;
   text-align: center;
+  font-family: 'Big Shoulders Display', cursive;
+  letter-spacing: 2px;
 }
 
 .pressed{
-  background: black;
-  color: white;
+  background: #a5319f;
+  color: #fff;
   transform: scale(1.05);
-  box-shadow: 1px 2px 10px 2px white;
+  box-shadow: 1px 2px 10px 2px #772473;
+  .sound{
+    color: #fff;
+  }
 }
